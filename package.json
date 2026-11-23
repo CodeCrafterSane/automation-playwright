@@ -1,0 +1,20 @@
+{
+  "name": "property-journey-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A sanitized real-estate automation portfolio: page objects, valid journey matrices and offline regressions.",
+  "scripts": {
+    "test": "playwright test",
+    "test:unit": "playwright test",
+    "test:e2e": "playwright test -c playwright.e2e.config.ts",
+    "typecheck": "tsc --noEmit",
+    "report": "playwright show-report",
+    "test:reference": "playwright test -c playwright.reference.config.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.59.1",
+    "@types/node": "25.6.0",
+    "typescript": "5.9.3",
+    "dotenv": "17.4.2"
+  }
+}
