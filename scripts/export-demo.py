@@ -4,7 +4,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 import argparse
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_DIRS = ('pages', 'fixtures', 'common', 'utils', 'tests', 'config', 'scripts', '.github/workflows')
+SOURCE_DIRS = ('pages', 'fixtures', 'common', 'utils', 'tests', 'config', 'scripts', '.github')
 SOURCE_FILES = ('README.md', '.gitignore', '.env.example', 'package.json', 'package-lock.json',
                 'tsconfig.json', 'playwright.config.ts', 'playwright.e2e.config.ts', 'playwright.reference.config.ts')
 
@@ -13,7 +13,7 @@ def source_files():
         yield ROOT / name
     for name in SOURCE_DIRS:
         for path in sorted((ROOT / name).rglob('*')):
-            if path.is_file() and not path.is_symlink() and path.suffix in {'.ts', '.py', '.yml', '.json'}:
+            if path.is_file() and not path.is_symlink() and path.suffix in {'.ts', '.js', '.py', '.yml', '.json'}:
                 yield path
 
 if __name__ == '__main__':

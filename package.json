@@ -9,7 +9,9 @@
     "test:e2e": "playwright test -c playwright.e2e.config.ts",
     "typecheck": "tsc --noEmit",
     "report": "playwright show-report",
-    "test:reference": "playwright test -c playwright.reference.config.ts"
+    "test:reference": "playwright test -c playwright.reference.config.ts",
+    "generate:workflows": "node scripts/generate-workflows.js",
+    "workflows:check": "node scripts/generate-workflows.js --check"
   },
   "devDependencies": {
     "@playwright/test": "1.59.1",
